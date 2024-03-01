@@ -1,18 +1,15 @@
-// -------------------------------- IMPORTACIONES, EXPORTACION Y FUNCIONES DE ARREGLOS --------------------------------
+// -------------------------------- PROMESAS --------------------------------
 
-//importar
-import { heroes } from './data/heroes'; 
+import getHeroeById from "./bases/exportaciones";
 
-//funcion que retorne la informacion de un heroe por id
-const getHeroe =  (id) => {
-    //la funcion find solo retorna un valor
-    return heroes.find((e) => e.id === id)
-}
+const promesa = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        //tarea: obtener el heoreo por id
+        const hereo = getHeroeById(2);
+        console.log(hereo);
+    }, 2000);
+});
 
-const getHeroeDC = (owner) => {
-    //la funcion filter retorna varios valores
-    return heroes.filter((e) => e.owner === owner);
-}
-
-console.log(getHeroe(2));
-console.log(getHeroeDC('Marvel'));
+promesa.then(() => {
+    console.log('Then de la promesa');
+})
