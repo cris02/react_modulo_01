@@ -1,15 +1,11 @@
-// -------------------------------- PROMESAS --------------------------------
+// -------------------------------- OPERADOR TERNARIO --------------------------------
 
-import getHeroeById from "./bases/exportaciones";
+const activo = true;
 
-const promesa = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        //tarea: obtener el heoreo por id
-        const hereo = getHeroeById(2);
-        console.log(hereo);
-    }, 2000);
-});
+// condicion ternario
+const mensaje = (activo) ? 'Activo' : 'Inactivo';
+console.log(mensaje);
 
-promesa.then(() => {
-    console.log('Then de la promesa');
-})
+// metod corto
+const mensaje2 = activo && 'Activo';
+console.log(mensaje2);
